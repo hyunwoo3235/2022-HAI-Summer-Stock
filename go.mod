@@ -2,7 +2,10 @@ module tidy
 
 go 1.18
 
-require github.com/imroc/req/v3 v3.14.3
+require (
+	github.com/dmitryikh/leaves v0.0.0-20210121075304-82771f84c313
+	github.com/imroc/req/v3 v3.14.3
+)
 
 require (
 	github.com/cheekybits/genny v1.0.0 // indirect
