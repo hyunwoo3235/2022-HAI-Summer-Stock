@@ -4,7 +4,9 @@ go 1.18
 
 require (
 	github.com/dmitryikh/leaves v0.0.0-20210121075304-82771f84c313
+	github.com/go-co-op/gocron v1.16.2
 	github.com/imroc/req/v3 v3.14.3
+	gonum.org/v1/gonum v0.11.0
 )
 
 require (
@@ -21,9 +23,12 @@ require (
 	github.com/marten-seemann/qtls-go1-19 v0.1.0-beta.1 // indirect
 	github.com/nxadm/tail v1.4.8 // indirect
 	github.com/onsi/ginkgo v1.16.5 // indirect
+	github.com/robfig/cron/v3 v3.0.1 // indirect
 	golang.org/x/crypto v0.0.0-20220722155217-630584e8d5aa // indirect
+	golang.org/x/exp v0.0.0-20220722155223-a9213eeb770e // indirect
 	golang.org/x/mod v0.6.0-dev.0.20220419223038-86c51ed26bb4 // indirect
 	golang.org/x/net v0.0.0-20220802222814-0bcc04d9c69b // indirect
+	golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4 // indirect
 	golang.org/x/sys v0.0.0-20220731174439-a90be440212d // indirect
 	golang.org/x/text v0.3.7 // indirect
 	golang.org/x/tools v0.1.12 // indirect

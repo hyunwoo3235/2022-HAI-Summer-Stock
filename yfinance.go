@@ -81,16 +81,29 @@ func NewTicker(symbol string) *Ticker {
 
 func (t *Ticker) GetChart(rangeStr, intervalStr string) (*ChartQueryResult, error) {
 	var r ChartQueryResult
-	url := "https://query1.finance.yahoo.com/v7/finance/chart/" + t.Symbol
 	_, err := t.client.R().
 		SetPathParam("range", rangeStr).
 		SetPathParam("interval", intervalStr).
 		SetResult(&r).
-		Get(url)
+		Get("https://query1.finance.yahoo.com/v7/finance/chart/" + t.Symbol)
 
 	if err != nil {
 		return nil, err
 	}
 
 	return &r, nil
+}
+
+func (t *Ticker) GetPrices(rangeStr, intervalStr string) ([]float64, error) {
+	r, err := t.GetChart(rangeStr, intervalStr)
+	if err != nil {
+		return nil, err
+	}
+	quote := r.Chart.Result[0].Indicators.Quote[0]
+	var prices []float64
+	for i := 0; i < len(quote.Close); i++ {
+		prices = append(prices, (quote.Close[i]+quote.Open[i])/2)
+	}
+
+	return prices, nil
 }
